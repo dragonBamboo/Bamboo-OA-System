@@ -6,10 +6,10 @@ import org.springframework.stereotype.Component;
 /**
  * 读取项目相关配置
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @Component
-@ConfigurationProperties(prefix = "ruoyi")
+@ConfigurationProperties(prefix = "bamboo")
 public class BambooConfig
 {
     /** 项目名称 */
