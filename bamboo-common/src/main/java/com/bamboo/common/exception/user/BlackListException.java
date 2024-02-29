@@ -3,7 +3,7 @@ package com.bamboo.common.exception.user;
 /**
  * 黑名单IP异常类
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class BlackListException extends UserException
 {

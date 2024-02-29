@@ -3,7 +3,7 @@ package com.bamboo.common.constant;
 /**
  * 用户常量信息
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class UserConstants
 {

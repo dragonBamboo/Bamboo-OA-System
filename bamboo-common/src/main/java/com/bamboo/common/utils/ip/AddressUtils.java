@@ -12,7 +12,7 @@ import com.bamboo.common.utils.http.HttpUtils;
 /**
  * 获取地址类
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class AddressUtils
 {

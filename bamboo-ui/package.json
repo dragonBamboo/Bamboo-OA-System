@@ -1,5 +1,5 @@
 {
-  "name": "ruoyi",
+  "name": "bamboo",
   "version": "3.8.6",
   "description": "Bamboo-OA管理系统",
   "author": "Bamboo",
@@ -33,7 +33,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/y_project/RuoYi-Vue.git"
+    "url": "https://gitee.com/y_project/Bamboo-Vue.git"
   },
   "dependencies": {
     "@riophae/vue-treeselect": "0.4.0",

@@ -8,7 +8,7 @@ bamboo:
   copyrightYear: 2023
   # 实例演示开关
   demoEnabled: true
-  # 文件路径 示例（ Windows配置D:/ruoyi/uploadPath，Linux配置 /home/ruoyi/uploadPath）
+  # 文件路径 示例（ Windows配置D:/bamboo/uploadPath，Linux配置 /home/bamboo/uploadPath）
   profile: D:/bamboo/uploadPath
   # 获取ip地址开关
   addressEnabled: false
@@ -70,7 +70,8 @@ spring:
   # redis 配置
   redis:
     # 地址
-    host: localhost
+#    host: localhost
+    host: 192.168.49.11
     # 端口，默认为6379
     port: 6379
     # 数据库索引
@@ -100,7 +101,7 @@ token:
   expireTime: 30
 
 # MyBatis配置
-mybatis:
+mybatis-plus:
   # 搜索指定包别名
   typeAliasesPackage: com.bamboo.**.domain
   # 配置mapper的扫描，找到所有的mapper.xml映射文件

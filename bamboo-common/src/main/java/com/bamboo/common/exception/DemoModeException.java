@@ -3,7 +3,7 @@ package com.bamboo.common.exception;
 /**
  * 演示模式异常
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class DemoModeException extends RuntimeException
 {

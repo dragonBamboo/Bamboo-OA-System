@@ -6,7 +6,7 @@ import com.bamboo.common.core.domain.entity.SysUser;
 /**
  * 用户 业务层
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public interface ISysUserService
 {

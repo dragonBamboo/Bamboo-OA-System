@@ -11,7 +11,7 @@ import com.bamboo.quartz.domain.SysJob;
 /**
  * 任务执行工具
  *
- * @author ruoyi
+ * @author bamboo
  */
 public class JobInvokeUtil
 {

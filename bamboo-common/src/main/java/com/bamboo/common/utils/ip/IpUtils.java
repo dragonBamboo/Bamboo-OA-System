@@ -10,7 +10,7 @@ import com.bamboo.common.utils.StringUtils;
 /**
  * 获取IP方法
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class IpUtils
 {

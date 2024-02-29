@@ -5,7 +5,7 @@ import com.bamboo.common.utils.StringUtils;
 /**
  * 字符串格式化
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class StrFormatter
 {

@@ -10,7 +10,7 @@ import com.bamboo.common.xss.Xss;
 /**
  * 通知公告表 sys_notice
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class SysNotice extends BaseEntity
 {

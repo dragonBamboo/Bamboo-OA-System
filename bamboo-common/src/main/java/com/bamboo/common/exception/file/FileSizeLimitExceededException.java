@@ -3,7 +3,7 @@ package com.bamboo.common.exception.file;
 /**
  * 文件名大小限制异常类
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class FileSizeLimitExceededException extends FileException
 {

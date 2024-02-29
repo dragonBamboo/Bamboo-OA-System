@@ -33,7 +33,7 @@ import com.bamboo.system.service.ISysUserService;
 /**
  * 登录校验方法
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @Component
 public class SysLoginService
@@ -122,11 +122,12 @@ public class SysLoginService
                 AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_FAIL, MessageUtils.message("user.jcaptcha.expire")));
                 throw new CaptchaExpireException();
             }
-            if (!code.equalsIgnoreCase(captcha))
+            // 验证码取消
+            /*if (!code.equalsIgnoreCase(captcha))
             {
                 AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_FAIL, MessageUtils.message("user.jcaptcha.error")));
                 throw new CaptchaException();
-            }
+            }*/
         }
     }
 

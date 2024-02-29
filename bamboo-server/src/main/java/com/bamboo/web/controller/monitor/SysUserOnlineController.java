@@ -26,7 +26,7 @@ import com.bamboo.system.service.ISysUserOnlineService;
 /**
  * 在线用户监控
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @RestController
 @RequestMapping("/monitor/online")

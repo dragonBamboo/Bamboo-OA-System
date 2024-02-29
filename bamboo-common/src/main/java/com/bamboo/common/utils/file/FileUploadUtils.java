@@ -19,7 +19,7 @@ import com.bamboo.common.utils.uuid.Seq;
 /**
  * 文件上传工具类
  *
- * @author ruoyi
+ * @author bamboo
  */
 public class FileUploadUtils
 {

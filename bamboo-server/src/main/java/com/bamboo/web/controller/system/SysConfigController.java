@@ -25,7 +25,7 @@ import com.bamboo.system.service.ISysConfigService;
 /**
  * 参数配置 信息操作处理
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @RestController
 @RequestMapping("/system/config")

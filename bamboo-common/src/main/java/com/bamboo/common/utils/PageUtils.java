@@ -8,7 +8,7 @@ import com.bamboo.common.utils.sql.SqlUtil;
 /**
  * 分页工具类
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class PageUtils extends PageHelper
 {

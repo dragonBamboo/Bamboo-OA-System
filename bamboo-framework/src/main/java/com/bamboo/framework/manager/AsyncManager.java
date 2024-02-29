@@ -9,7 +9,7 @@ import com.bamboo.common.utils.spring.SpringUtils;
 /**
  * 异步任务管理器
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class AsyncManager
 {

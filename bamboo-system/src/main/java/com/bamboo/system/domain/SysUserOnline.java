@@ -3,7 +3,7 @@ package com.bamboo.system.domain;
 /**
  * 当前在线会话
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class SysUserOnline
 {

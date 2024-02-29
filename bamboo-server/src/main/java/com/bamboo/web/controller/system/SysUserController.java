@@ -35,7 +35,7 @@ import com.bamboo.system.service.ISysUserService;
 /**
  * 用户信息
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @RestController
 @RequestMapping("/system/user")

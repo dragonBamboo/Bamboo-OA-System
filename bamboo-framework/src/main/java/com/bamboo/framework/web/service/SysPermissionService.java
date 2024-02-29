@@ -14,7 +14,7 @@ import com.bamboo.system.service.ISysRoleService;
 /**
  * 用户权限处理
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @Component
 public class SysPermissionService

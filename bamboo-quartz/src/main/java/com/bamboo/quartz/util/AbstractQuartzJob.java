@@ -20,7 +20,7 @@ import com.bamboo.common.utils.spring.SpringUtils;
 /**
  * 抽象quartz调用
  *
- * @author ruoyi
+ * @author bamboo
  */
 public abstract class AbstractQuartzJob implements Job
 {

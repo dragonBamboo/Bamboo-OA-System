@@ -3,7 +3,7 @@ package com.bamboo.common.enums;
 /**
  * 业务操作类型
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public enum BusinessType
 {

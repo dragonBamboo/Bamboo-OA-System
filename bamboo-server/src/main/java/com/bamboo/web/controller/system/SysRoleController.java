@@ -34,7 +34,7 @@ import com.bamboo.system.service.ISysUserService;
 /**
  * 角色信息
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @RestController
 @RequestMapping("/system/role")

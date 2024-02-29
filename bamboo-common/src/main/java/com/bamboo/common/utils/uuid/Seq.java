@@ -6,7 +6,7 @@ import com.bamboo.common.utils.DateUtils;
 import com.bamboo.common.utils.StringUtils;
 
 /**
- * @author ruoyi 序列生成类
+ * @author bamboo 序列生成类
  */
 public class Seq
 {

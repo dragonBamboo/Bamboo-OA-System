@@ -26,7 +26,7 @@ import com.bamboo.common.constant.Constants;
 /**
  * 通用http发送方法
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class HttpUtils
 {

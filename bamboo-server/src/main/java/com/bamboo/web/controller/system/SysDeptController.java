@@ -25,7 +25,7 @@ import com.bamboo.system.service.ISysDeptService;
 /**
  * 部门信息
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @RestController
 @RequestMapping("/system/dept")

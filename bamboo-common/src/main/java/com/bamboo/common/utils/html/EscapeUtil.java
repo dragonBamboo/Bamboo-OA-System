@@ -5,7 +5,7 @@ import com.bamboo.common.utils.StringUtils;
 /**
  * 转义和反转义工具类
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class EscapeUtil
 {

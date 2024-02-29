@@ -23,7 +23,7 @@ import com.bamboo.common.utils.poi.ExcelUtil;
 /**
  * 调度日志操作处理
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @RestController
 @RequestMapping("/monitor/jobLog")

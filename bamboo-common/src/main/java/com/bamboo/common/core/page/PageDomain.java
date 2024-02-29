@@ -5,7 +5,7 @@ import com.bamboo.common.utils.StringUtils;
 /**
  * 分页数据
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class PageDomain
 {

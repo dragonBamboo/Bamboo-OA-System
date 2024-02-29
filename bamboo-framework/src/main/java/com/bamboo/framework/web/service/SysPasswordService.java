@@ -21,7 +21,7 @@ import com.bamboo.common.utils.SecurityUtils;
 /**
  * 登录密码方法
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @Component
 public class SysPasswordService

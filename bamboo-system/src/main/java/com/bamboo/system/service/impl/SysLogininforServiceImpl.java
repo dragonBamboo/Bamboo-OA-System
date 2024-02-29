@@ -10,7 +10,7 @@ import com.bamboo.system.service.ISysLogininforService;
 /**
  * 系统访问日志情况信息 服务层处理
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @Service
 public class SysLogininforServiceImpl implements ISysLogininforService

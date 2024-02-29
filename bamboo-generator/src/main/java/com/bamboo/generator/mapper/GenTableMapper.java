@@ -7,7 +7,7 @@ import com.bamboo.generator.domain.GenTable;
 /**
  * 业务 数据层
  *
- * @author ruoyi
+ * @author bamboo
  */
 public interface GenTableMapper {
     /**

@@ -170,6 +170,13 @@
                 <version>${bamboo.version}</version>
             </dependency>
 
+            <!-- 主要模块 -->
+            <dependency>
+                <groupId>com.bamboo</groupId>
+                <artifactId>bamboo-boa</artifactId>
+                <version>${bamboo.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -180,7 +187,9 @@
         <module>bamboo-quartz</module>
         <module>bamboo-generator</module>
         <module>bamboo-common</module>
+        <module>bamboo-boa</module>
     </modules>
+
     <packaging>pom</packaging>
 
     <build>

@@ -7,7 +7,7 @@ import com.bamboo.system.domain.SysOperLog;
 /**
  * 操作日志 数据层
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public interface SysOperLogMapper
 {

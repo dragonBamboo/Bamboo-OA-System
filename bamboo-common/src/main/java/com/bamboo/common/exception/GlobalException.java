@@ -3,7 +3,7 @@ package com.bamboo.common.exception;
 /**
  * 全局异常
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class GlobalException extends RuntimeException
 {

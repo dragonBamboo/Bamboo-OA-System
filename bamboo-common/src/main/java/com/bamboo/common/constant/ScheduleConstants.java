@@ -3,7 +3,7 @@ package com.bamboo.common.constant;
 /**
  * 任务调度通用常量
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class ScheduleConstants
 {

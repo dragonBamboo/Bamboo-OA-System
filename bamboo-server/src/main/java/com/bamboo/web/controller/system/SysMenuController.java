@@ -24,7 +24,7 @@ import com.bamboo.system.service.ISysMenuService;
 /**
  * 菜单信息
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @RestController
 @RequestMapping("/system/menu")

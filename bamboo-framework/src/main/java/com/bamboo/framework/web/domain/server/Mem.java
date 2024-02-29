@@ -5,7 +5,7 @@ import com.bamboo.common.utils.Arith;
 /**
  * 內存相关信息
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class Mem
 {

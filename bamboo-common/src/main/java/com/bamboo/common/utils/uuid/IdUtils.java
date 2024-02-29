@@ -3,7 +3,7 @@ package com.bamboo.common.utils.uuid;
 /**
  * ID生成器工具类
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class IdUtils
 {

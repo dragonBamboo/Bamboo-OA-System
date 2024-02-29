@@ -6,7 +6,7 @@ import com.bamboo.common.utils.StringUtils;
 /**
  * 基础异常
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class BaseException extends RuntimeException
 {

@@ -26,7 +26,7 @@ import com.bamboo.system.service.ISysUserService;
 /**
  * 个人信息 业务处理
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @RestController
 @RequestMapping("/system/user/profile")

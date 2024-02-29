@@ -14,7 +14,7 @@ import com.bamboo.system.service.ISysConfigService;
 /**
  * 注册验证
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @RestController
 public class SysRegisterController extends BaseController

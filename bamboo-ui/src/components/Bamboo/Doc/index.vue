@@ -1,15 +1,15 @@
 <template>
   <div>
-    <svg-icon icon-class="github" @click="goto" />
+    <svg-icon icon-class="question" @click="goto" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'RuoYiGit',
+  name: 'bambooDoc',
   data() {
     return {
-      url: 'https://gitee.com/y_project/RuoYi-Vue'
+      url: 'http://doc.bamboo.vip/bamboo-vue'
     }
   },
   methods: {

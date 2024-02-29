@@ -23,7 +23,7 @@ import com.bamboo.system.service.ISysLogininforService;
 /**
  * 系统访问记录
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @RestController
 @RequestMapping("/monitor/logininfor")

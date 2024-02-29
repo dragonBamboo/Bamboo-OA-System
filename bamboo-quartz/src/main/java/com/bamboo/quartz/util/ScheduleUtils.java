@@ -21,7 +21,7 @@ import com.bamboo.common.utils.spring.SpringUtils;
 /**
  * 定时任务工具类
  * 
- * @author ruoyi
+ * @author bamboo
  *
  */
 public class ScheduleUtils

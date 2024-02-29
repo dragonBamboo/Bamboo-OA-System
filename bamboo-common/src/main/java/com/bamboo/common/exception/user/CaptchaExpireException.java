@@ -3,7 +3,7 @@ package com.bamboo.common.exception.user;
 /**
  * 验证码失效异常类
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class CaptchaExpireException extends UserException
 {

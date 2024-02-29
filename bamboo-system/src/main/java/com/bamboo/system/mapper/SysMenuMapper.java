@@ -7,7 +7,7 @@ import com.bamboo.common.core.domain.entity.SysMenu;
 /**
  * 菜单表 数据层
  *
- * @author ruoyi
+ * @author bamboo
  */
 public interface SysMenuMapper
 {

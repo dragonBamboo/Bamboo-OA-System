@@ -3,7 +3,7 @@ package com.bamboo.common.core.domain.model;
 /**
  * 用户登录对象
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class LoginBody
 {

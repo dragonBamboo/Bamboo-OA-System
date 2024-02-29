@@ -5,7 +5,7 @@ import com.bamboo.common.exception.base.BaseException;
 /**
  * 文件信息异常类
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class FileException extends BaseException
 {

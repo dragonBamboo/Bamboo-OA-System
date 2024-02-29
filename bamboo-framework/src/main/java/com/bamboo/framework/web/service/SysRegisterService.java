@@ -21,7 +21,7 @@ import com.bamboo.system.service.ISysUserService;
 /**
  * 注册校验方法
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @Component
 public class SysRegisterService

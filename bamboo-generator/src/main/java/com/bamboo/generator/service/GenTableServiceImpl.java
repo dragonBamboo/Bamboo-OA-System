@@ -41,7 +41,7 @@ import com.bamboo.generator.util.VelocityUtils;
 /**
  * 业务 服务层实现
  *
- * @author ruoyi
+ * @author bamboo
  */
 @Service
 public class GenTableServiceImpl implements IGenTableService {

@@ -10,7 +10,7 @@ import com.bamboo.framework.web.domain.Server;
 /**
  * 服务器监控
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @RestController
 @RequestMapping("/monitor/server")

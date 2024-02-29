@@ -5,7 +5,7 @@ import com.bamboo.common.utils.StringUtils;
 /**
  * 缓存信息
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class SysCache
 {

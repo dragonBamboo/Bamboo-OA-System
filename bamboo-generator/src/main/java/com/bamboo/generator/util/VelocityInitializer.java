@@ -7,7 +7,7 @@ import com.bamboo.common.constant.Constants;
 /**
  * VelocityEngine工厂
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class VelocityInitializer
 {

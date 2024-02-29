@@ -3,7 +3,7 @@ package com.bamboo.common.enums;
 /**
  * 数据源
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public enum DataSourceType
 {

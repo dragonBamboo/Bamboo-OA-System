@@ -3,7 +3,7 @@ package com.bamboo.common.enums;
 /**
  * 限流类型
  *
- * @author ruoyi
+ * @author bamboo
  */
 
 public enum LimitType

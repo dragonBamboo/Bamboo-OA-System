@@ -25,7 +25,7 @@ import com.bamboo.system.service.ISysDictTypeService;
 /**
  * 数据字典信息
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @RestController
 @RequestMapping("/system/dict/type")

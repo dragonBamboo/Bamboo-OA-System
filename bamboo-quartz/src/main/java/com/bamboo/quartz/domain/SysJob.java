@@ -16,7 +16,7 @@ import com.bamboo.quartz.util.CronUtils;
 /**
  * 定时任务调度表 sys_job
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class SysJob extends BaseEntity
 {

@@ -3,7 +3,7 @@ package com.bamboo.common.enums;
 /**
  * 操作状态
  * 
- * @author ruoyi
+ * @author bamboo
  *
  */
 public enum BusinessStatus

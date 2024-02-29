@@ -3,7 +3,7 @@ package com.bamboo.common.exception;
 /**
  * 工具类异常
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class UtilException extends RuntimeException
 {

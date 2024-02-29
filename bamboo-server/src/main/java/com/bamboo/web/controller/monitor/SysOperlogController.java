@@ -22,7 +22,7 @@ import com.bamboo.system.service.ISysOperLogService;
 /**
  * 操作日志记录
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @RestController
 @RequestMapping("/monitor/operlog")

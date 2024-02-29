@@ -5,7 +5,7 @@ import com.bamboo.common.utils.Arith;
 /**
  * CPU相关信息
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class Cpu
 {

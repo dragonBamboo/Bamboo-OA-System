@@ -6,7 +6,7 @@ import com.bamboo.common.exception.UtilException;
 /**
  * sql操作工具类
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class SqlUtil
 {

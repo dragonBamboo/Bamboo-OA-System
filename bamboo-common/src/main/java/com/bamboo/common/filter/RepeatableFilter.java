@@ -15,7 +15,7 @@ import org.springframework.http.MediaType;
 /**
  * Repeatable 过滤器
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class RepeatableFilter implements Filter
 {

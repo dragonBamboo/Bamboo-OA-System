@@ -31,7 +31,7 @@ import com.bamboo.quartz.util.ScheduleUtils;
 /**
  * 调度任务信息操作处理
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @RestController
 @RequestMapping("/monitor/job")

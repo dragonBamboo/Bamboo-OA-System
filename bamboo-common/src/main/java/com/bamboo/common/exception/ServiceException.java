@@ -3,7 +3,7 @@ package com.bamboo.common.exception;
 /**
  * 业务异常
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public final class ServiceException extends RuntimeException
 {

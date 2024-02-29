@@ -3,7 +3,7 @@ package com.bamboo.common.enums;
 /**
  * 用户状态
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public enum UserStatus
 {

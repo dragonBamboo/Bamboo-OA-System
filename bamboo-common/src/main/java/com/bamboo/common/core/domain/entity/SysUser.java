@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * 用户对象 sys_user
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class SysUser extends BaseEntity
 {

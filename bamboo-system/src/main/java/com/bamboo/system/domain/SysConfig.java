@@ -11,7 +11,7 @@ import com.bamboo.common.core.domain.BaseEntity;
 /**
  * 参数配置表 sys_config
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class SysConfig extends BaseEntity
 {

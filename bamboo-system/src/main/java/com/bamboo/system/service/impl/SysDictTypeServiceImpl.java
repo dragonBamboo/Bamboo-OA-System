@@ -21,7 +21,7 @@ import com.bamboo.system.service.ISysDictTypeService;
 /**
  * 字典 业务层处理
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @Service
 public class SysDictTypeServiceImpl implements ISysDictTypeService

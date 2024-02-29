@@ -3,7 +3,7 @@ package com.bamboo.common.exception.user;
 /**
  * 用户不存在异常类
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class UserNotExistsException extends UserException
 {

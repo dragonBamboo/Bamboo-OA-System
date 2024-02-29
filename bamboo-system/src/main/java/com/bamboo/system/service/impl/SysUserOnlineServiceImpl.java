@@ -9,7 +9,7 @@ import com.bamboo.system.service.ISysUserOnlineService;
 /**
  * 在线用户 服务层处理
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @Service
 public class SysUserOnlineServiceImpl implements ISysUserOnlineService

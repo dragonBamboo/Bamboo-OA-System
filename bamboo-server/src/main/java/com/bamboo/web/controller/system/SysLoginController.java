@@ -2,6 +2,8 @@ package com.bamboo.web.controller.system;
 
 import java.util.List;
 import java.util.Set;
+
+import com.bamboo.common.utils.sign.RsaUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +22,7 @@ import com.bamboo.system.service.ISysMenuService;
 /**
  * 登录验证
  * 
- * @author ruoyi
+ * @author bamboo
  */
 @RestController
 public class SysLoginController
@@ -41,12 +43,18 @@ public class SysLoginController
      * @return 结果
      */
     @PostMapping("/login")
-    public AjaxResult login(@RequestBody LoginBody loginBody)
-    {
+    public AjaxResult login(@RequestBody LoginBody loginBody) throws Exception {
         AjaxResult ajax = AjaxResult.success();
         // 生成令牌
-        String token = loginService.login(loginBody.getUsername(), loginBody.getPassword(), loginBody.getCode(),
-                loginBody.getUuid());
+        // String token = loginService.login(loginBody.getUsername(), loginBody.getPassword(), loginBody.getCode(),
+        //         loginBody.getUuid());
+        String token = null;
+        try {
+            token = loginService.login(loginBody.getUsername(),
+                    RsaUtils.decryptByPrivateKey(loginBody.getPassword()), loginBody.getCode(), loginBody.getUuid());
+        } catch (Exception e) {
+            throw new Exception("加密异常");
+        }
         ajax.put(Constants.TOKEN, token);
         return ajax;
     }

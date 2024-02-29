@@ -3,7 +3,7 @@ package com.bamboo.common.enums;
 /**
  * 操作人类别
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public enum OperatorType
 {

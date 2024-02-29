@@ -7,7 +7,7 @@ import com.bamboo.common.utils.StringUtils;
 /**
  * 字符集工具类
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class CharsetKit
 {

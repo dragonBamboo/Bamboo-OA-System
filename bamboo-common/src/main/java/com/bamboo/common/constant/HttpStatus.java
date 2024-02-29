@@ -3,7 +3,7 @@ package com.bamboo.common.constant;
 /**
  * 返回状态码
  * 
- * @author ruoyi
+ * @author bamboo
  */
 public class HttpStatus
 {
