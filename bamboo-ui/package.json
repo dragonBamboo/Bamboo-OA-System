@@ -1,7 +1,7 @@
 {
   "name": "bamboo",
   "version": "3.8.6",
-  "description": "Bamboo-OA管理系统",
+  "description": "天竹OA管理系统",
   "author": "Bamboo",
   "license": "MIT",
   "scripts": {
