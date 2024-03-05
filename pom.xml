@@ -9,7 +9,6 @@
     <version>3.8.6</version>
 
     <name>bamboo</name>
-    <url>http://www.bamboo.vip</url>
     <description>Bamboo-OA管理系统</description>
     
     <properties>
@@ -30,6 +29,8 @@
         <poi.version>4.1.2</poi.version>
         <velocity.version>2.3</velocity.version>
         <jwt.version>0.9.1</jwt.version>
+        <mybatis-plus.version>3.5.1</mybatis-plus.version>
+        <knife4j.version>3.0.3</knife4j.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -175,6 +176,19 @@
                 <groupId>com.bamboo</groupId>
                 <artifactId>bamboo-boa</artifactId>
                 <version>${bamboo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!-- knife4j -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
             </dependency>
 
         </dependencies>

@@ -1,6 +1,9 @@
 package com.bamboo.web.controller.system;
 
 import java.util.List;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -28,6 +31,7 @@ import com.bamboo.system.service.ISysDeptService;
  * @author bamboo
  */
 @RestController
+@Api(tags = "部门管理")
 @RequestMapping("/system/dept")
 public class SysDeptController extends BaseController
 {
@@ -37,6 +41,7 @@ public class SysDeptController extends BaseController
     /**
      * 获取部门列表
      */
+    @ApiOperation("获取部门列表")
     @PreAuthorize("@ss.hasPermi('system:dept:list')")
     @GetMapping("/list")
     public AjaxResult list(SysDept dept)

@@ -950,6 +950,10 @@ export default {
       version: "3.8.6"
     };
   },
+  created() {
+  },
+  mounted() {
+  },
   methods: {
     goTarget(href) {
       window.open(href, "_blank");
@@ -959,6 +963,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 .home {
   blockquote {
     padding: 10px 20px;

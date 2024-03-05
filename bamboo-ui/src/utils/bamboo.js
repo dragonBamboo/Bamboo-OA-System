@@ -1,9 +1,9 @@
-
-
 /**
  * 通用js方法封装处理
  * Copyright (c) 2019 bamboo
  */
+import {debug} from "script-ext-html-webpack-plugin/lib/common";
+
 
 // 日期格式化
 export function parseTime(time, pattern) {
@@ -37,7 +37,9 @@ export function parseTime(time, pattern) {
   const time_str = format.replace(/{(y|m|d|h|i|s|a)+}/g, (result, key) => {
     let value = formatObj[key]
     // Note: getDay() returns 0 on Sunday
-    if (key === 'a') { return ['日', '一', '二', '三', '四', '五', '六'][value] }
+    if (key === 'a') {
+      return ['日', '一', '二', '三', '四', '五', '六'][value]
+    }
     if (result.length > 0 && value < 10) {
       value = '0' + value
     }
@@ -88,7 +90,7 @@ export function selectDictLabel(datas, value) {
 
 // 回显数据字典（字符串、数组）
 export function selectDictLabels(datas, value, separator) {
-  if (value === undefined || value.length ===0) {
+  if (value === undefined || value.length === 0) {
     return "";
   }
   if (Array.isArray(value)) {
@@ -167,7 +169,6 @@ export function handleTree(data, id, parentId, children) {
   var childrenListMap = {};
   var nodeIds = {};
   var tree = [];
-
   for (let d of data) {
     let parentId = d[config.parentId];
     if (childrenListMap[parentId] == null) {
@@ -176,7 +177,6 @@ export function handleTree(data, id, parentId, children) {
     nodeIds[d[config.id]] = d;
     childrenListMap[parentId].push(d);
   }
-
   for (let d of data) {
     let parentId = d[config.parentId];
     if (nodeIds[parentId] == null) {
@@ -198,13 +198,14 @@ export function handleTree(data, id, parentId, children) {
       }
     }
   }
+
   return tree;
 }
 
 /**
-* 参数处理
-* @param {*} params  参数
-*/
+ * 参数处理
+ * @param {*} params  参数
+ */
 export function tansParams(params) {
   let result = ''
   for (const propName of Object.keys(params)) {
