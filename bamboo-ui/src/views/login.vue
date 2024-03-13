@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import { getCodeImg } from "@/api/login";
+import {getCodeImg, getInfo} from "@/api/login";
 import Cookies from "js-cookie";
 import { encrypt, decrypt } from '@/utils/jsencrypt'
 
@@ -142,6 +142,9 @@ export default {
             Cookies.remove('rememberMe');
           }
           this.$store.dispatch("Login", this.loginForm).then(() => {
+            getInfo().then(res =>{
+              Cookies.set("user",JSON.stringify(res))
+            })
             this.$router.push({ path: this.redirect || "/" }).catch(()=>{});
           }).catch(() => {
             this.loading = false;

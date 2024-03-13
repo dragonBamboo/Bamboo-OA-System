@@ -1,6 +1,8 @@
 package com.bamboo.system.mapper;
 
 import java.util.List;
+
+import com.bamboo.common.utils.sql.BaseMapperX;
 import org.apache.ibatis.annotations.Param;
 import com.bamboo.common.core.domain.entity.SysUser;
 
@@ -9,7 +11,7 @@ import com.bamboo.common.core.domain.entity.SysUser;
  * 
  * @author bamboo
  */
-public interface SysUserMapper
+public interface SysUserMapper extends BaseMapperX<SysUser>
 {
     /**
      * 根据条件分页查询用户列表
@@ -124,4 +126,6 @@ public interface SysUserMapper
      * @return 结果
      */
     public SysUser checkEmailUnique(String email);
+
+    SysUser selectUserByNickName(String submitName);
 }

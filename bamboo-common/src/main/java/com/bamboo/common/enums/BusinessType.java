@@ -56,4 +56,14 @@ public enum BusinessType
      * 清空数据
      */
     CLEAN,
+
+    /**
+     * 同意
+     */
+    AGREE,
+
+    /**
+     * 驳回
+     */
+    REJECT
 }

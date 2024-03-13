@@ -2,6 +2,7 @@ package com.bamboo.boa.controller;
 
 import com.bamboo.boa.domain.BoaTestDO;
 import com.bamboo.boa.service.BoaTestService;
+import com.bamboo.common.core.controller.BaseController;
 import com.bamboo.common.core.domain.AjaxResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -19,7 +20,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/boa")
 @Slf4j
-public class BoaController {
+public class BoaController extends BaseController {
 
     @Resource
     private BoaTestService boaTestService;

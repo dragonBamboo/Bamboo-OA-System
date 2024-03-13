@@ -2,8 +2,11 @@ package com.bamboo.system.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import javax.validation.Validator;
+
+import com.bamboo.common.utils.sql.SmallUserVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -540,5 +543,25 @@ public class SysUserServiceImpl implements ISysUserService
             successMsg.insert(0, "恭喜您，数据已全部导入成功！共 " + successNum + " 条，数据如下：");
         }
         return successMsg.toString();
+    }
+
+    @Override
+    public List<SmallUserVO> selectSmallFormatUserList() {
+        List<SysUser> sysUsers = userMapper.selectUserList(new SysUser());
+        List<SmallUserVO> result = new ArrayList<>();
+        sysUsers.forEach(e->{
+            if (e != null) {
+                SmallUserVO smallUserVO = new SmallUserVO()
+                        .setId(e.getUserId())
+                        .setName(e.getNickName()!=null?e.getNickName():String.valueOf(e.getUserId()));
+                result.add(smallUserVO);
+            }
+        });
+        return result;
+    }
+
+    @Override
+    public SysUser selectUserByNickName(String submitName) {
+        return userMapper.selectUserByNickName(submitName);
     }
 }

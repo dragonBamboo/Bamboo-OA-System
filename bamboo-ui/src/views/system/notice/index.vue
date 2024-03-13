@@ -182,7 +182,7 @@
     </el-dialog>
 
     <!--通知公告详情 -->
-    <el-dialog :title="form.noticeTitle" :visible.sync="openDetail" width="auto" append-to-body>
+    <el-dialog :title="form.noticeTitle" :visible.sync="openDetail" width="800" append-to-body>
       <div style="margin-top:-20px;margin-bottom:10px;">
         <el-tag size="mini" effect="dark" type="warning" v-if="form.noticeType==2">公告</el-tag>
         <el-tag size="mini" effect="dark" v-else>信息</el-tag>

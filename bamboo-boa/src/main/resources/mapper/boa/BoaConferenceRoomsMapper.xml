@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bamboo.boa.mapper.BoaConferenceRoomsMapper">
+    
+    <resultMap type="BoaConferenceRoomsDO" id="BoaConferenceRoomsResult">
+        <result property="id"    column="id"    />
+        <result property="meetingName"    column="meeting_name"    />
+        <result property="detailedLocation"    column="detailed_location"    />
+        <result property="bookingPerson"    column="booking_person"    />
+        <result property="imageUrl"    column="image_url"    />
+        <result property="meetingStartTime"    column="meeting_start_time"    />
+        <result property="meetingEndTime"    column="meeting_end_time"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="isDeleted"    column="is_deleted"    />
+    </resultMap>
+
+    <sql id="selectBoaConferenceRoomsVo">
+        select id, meeting_name, detailed_location, booking_person, image_url, meeting_start_time, meeting_end_time, create_time, update_time, is_deleted from boa_conference_rooms
+    </sql>
+
+    <select id="selectBoaConferenceRoomsList" parameterType="BoaConferenceRoomsDO" resultMap="BoaConferenceRoomsResult">
+        <include refid="selectBoaConferenceRoomsVo"/>
+        <where>  
+            <if test="meetingName != null  and meetingName != ''"> and meeting_name like concat('%', #{meetingName}, '%')</if>
+            <if test="detailedLocation != null  and detailedLocation != ''"> and detailed_location = #{detailedLocation}</if>
+            <if test="bookingPerson != null "> and booking_person = #{bookingPerson}</if>
+            <if test="imageUrl != null  and imageUrl != ''"> and image_url = #{imageUrl}</if>
+            <if test="meetingStartTime != null "> and meeting_start_time = #{meetingStartTime}</if>
+            <if test="meetingEndTime != null "> and meeting_end_time = #{meetingEndTime}</if>
+            and is_deleted = 0
+        </where>
+    </select>
+    
+    <select id="selectBoaConferenceRoomsById" parameterType="Long" resultMap="BoaConferenceRoomsResult">
+        <include refid="selectBoaConferenceRoomsVo"/>
+        where id = #{id} and is_deleted = 0
+    </select>
+        
+    <insert id="insertBoaConferenceRooms" parameterType="BoaConferenceRoomsDO" useGeneratedKeys="true" keyProperty="id">
+        insert into boa_conference_rooms
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="meetingName != null">meeting_name,</if>
+            <if test="detailedLocation != null">detailed_location,</if>
+            <if test="bookingPerson != null">booking_person,</if>
+            <if test="imageUrl != null">image_url,</if>
+            <if test="meetingStartTime != null">meeting_start_time,</if>
+            <if test="meetingEndTime != null">meeting_end_time,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="isDeleted != null">is_deleted,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="meetingName != null">#{meetingName},</if>
+            <if test="detailedLocation != null">#{detailedLocation},</if>
+            <if test="bookingPerson != null">#{bookingPerson},</if>
+            <if test="imageUrl != null">#{imageUrl},</if>
+            <if test="meetingStartTime != null">#{meetingStartTime},</if>
+            <if test="meetingEndTime != null">#{meetingEndTime},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="isDeleted != null">#{isDeleted},</if>
+         </trim>
+    </insert>
+
+    <update id="updateBoaConferenceRooms" parameterType="BoaConferenceRoomsDO">
+        update boa_conference_rooms
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="meetingName != null">meeting_name = #{meetingName},</if>
+            <if test="detailedLocation != null">detailed_location = #{detailedLocation},</if>
+            <if test="bookingPerson != null">booking_person = #{bookingPerson},</if>
+            <if test="imageUrl != null">image_url = #{imageUrl},</if>
+            <if test="meetingStartTime != null">meeting_start_time = #{meetingStartTime},</if>
+            <if test="meetingEndTime != null">meeting_end_time = #{meetingEndTime},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="isDeleted != null">is_deleted = #{isDeleted},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBoaConferenceRoomsById" parameterType="Long">
+        delete from boa_conference_rooms where id = #{id}
+    </delete>
+
+    <delete id="deleteBoaConferenceRoomsByIds" parameterType="String">
+        delete from boa_conference_rooms where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

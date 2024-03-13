@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bamboo.boa.mapper.BoaScheduleMapper">
+
+    <resultMap type="boaScheduleDO" id="BoaScheduleResult">
+        <result property="id"    column="id"    />
+        <result property="title"    column="title"    />
+        <result property="description"    column="description"    />
+        <result property="location"    column="location"    />
+        <result property="startTime"    column="start_time"    />
+        <result property="endTime"    column="end_time"    />
+        <result property="submitterId"    column="submitter_id"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="isDeleted"    column="is_deleted"    />
+    </resultMap>
+
+    <sql id="selectBoaScheduleVo">
+        select id, title, description, location, start_time, end_time, submitter_id, create_time, update_time, is_deleted from boa_schedule
+    </sql>
+
+    <select id="selectBoaScheduleList" parameterType="boaScheduleDO" resultMap="BoaScheduleResult">
+        <include refid="selectBoaScheduleVo"/>
+        <where>
+            and is_deleted = 0
+            <if test="title != null  and title != ''"> and title like CONCAT('%',#{title},'%') </if>
+            <if test="description != null  and description != ''"> and description like CONCAT('%',#{description},'%') </if>
+            <if test="location != null  and location != ''"> and location like CONCAT('%',#{location},'%')</if>
+            <if test="startTime != null "> and start_time &gt;= #{startTime}</if>
+            <if test="endTime != null "> and end_time &lt;= #{endTime}</if>
+        </where>
+    </select>
+
+    <select id="selectBoaScheduleById" parameterType="Long" resultMap="BoaScheduleResult">
+        <include refid="selectBoaScheduleVo"/>
+        where id = #{id} and is_deleted=0
+    </select>
+
+    <insert id="insertBoaSchedule" parameterType="boaScheduleDO">
+        insert into boa_schedule
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="title != null">title,</if>
+            <if test="description != null">description,</if>
+            <if test="location != null">location,</if>
+            <if test="startTime != null">start_time,</if>
+            <if test="endTime != null">end_time,</if>
+            <if test="submitterId != null">submitter_id,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="title != null">#{title},</if>
+            <if test="description != null">#{description},</if>
+            <if test="location != null">#{location},</if>
+            <if test="startTime != null">#{startTime},</if>
+            <if test="endTime != null">#{endTime},</if>
+            <if test="submitterId != null">#{submitterId},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="isDeleted != null">#{isDeleted},</if>
+        </trim>
+    </insert>
+
+    <update id="updateBoaSchedule" parameterType="boaScheduleDO">
+        update boa_schedule
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="title != null">title = #{title},</if>
+            <if test="description != null">description = #{description},</if>
+            <if test="location != null">location = #{location},</if>
+            <if test="startTime != null">start_time = #{startTime},</if>
+            <if test="endTime != null">end_time = #{endTime},</if>
+            <if test="submitterId != null">submitter_id = #{submitterId},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="isDeleted != null">is_deleted = #{isDeleted},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBoaScheduleById" parameterType="Long">
+        delete from boa_schedule where id = #{id}
+    </delete>
+
+    <delete id="deleteBoaScheduleByIds" parameterType="String">
+        delete from boa_schedule where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

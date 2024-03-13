@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Set;
 
 import com.bamboo.common.utils.sign.RsaUtils;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +26,7 @@ import com.bamboo.system.service.ISysMenuService;
  * 
  * @author bamboo
  */
+@Api(tags = "登录验证")
 @RestController
 public class SysLoginController
 {
@@ -53,7 +56,7 @@ public class SysLoginController
             token = loginService.login(loginBody.getUsername(),
                     RsaUtils.decryptByPrivateKey(loginBody.getPassword()), loginBody.getCode(), loginBody.getUuid());
         } catch (Exception e) {
-            throw new Exception("加密异常");
+            throw new Exception("登录失败，请重新登录！");
         }
         ajax.put(Constants.TOKEN, token);
         return ajax;
@@ -64,6 +67,7 @@ public class SysLoginController
      * 
      * @return 用户信息
      */
+    @ApiOperation("获取用户信息")
     @GetMapping("getInfo")
     public AjaxResult getInfo()
     {

@@ -56,6 +56,7 @@ import SizeSelect from '@/components/SizeSelect'
 import Search from '@/components/HeaderSearch'
 import bambooGit from '@/components/Bamboo/Git'
 import bambooDoc from '@/components/Bamboo/Doc'
+import Cookies from "js-cookie";
 
 export default {
   components: {
@@ -102,6 +103,7 @@ export default {
         type: 'warning'
       }).then(() => {
         this.$store.dispatch('LogOut').then(() => {
+          // Cookies.remove("loginUser")
           location.href = '/index';
         })
       }).catch(() => {});

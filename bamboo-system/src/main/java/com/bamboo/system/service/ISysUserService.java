@@ -1,7 +1,10 @@
 package com.bamboo.system.service;
 
 import java.util.List;
+import java.util.Set;
+
 import com.bamboo.common.core.domain.entity.SysUser;
+import com.bamboo.common.utils.sql.SmallUserVO;
 
 /**
  * 用户 业务层
@@ -203,4 +206,8 @@ public interface ISysUserService
      * @return 结果
      */
     public String importUser(List<SysUser> userList, Boolean isUpdateSupport, String operName);
+
+    List<SmallUserVO> selectSmallFormatUserList();
+
+    SysUser selectUserByNickName(String submitName);
 }
