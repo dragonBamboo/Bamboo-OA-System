@@ -100,21 +100,22 @@
     <el-table v-loading="loading" :data="roomsList" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" align="center"/>
       <el-table-column label="会议名" align="center" prop="meetingName"/>
-<!--      <el-table-column label="预览" align="center" prop="imageUrl">-->
-<!--        <template v-slot="scope">-->
-<!--          <el-image-->
-<!--            v-if="scope.row.imageUrl"-->
-<!--            :src="scope.row.url"/>-->
-<!--          <el-upload-->
-<!--            v-else-->
-<!--            class="upload-demo"-->
-<!--            :http-request="uploadImg"-->
-<!--            :on-success="handleUploadSuccess.bind(null, scope.row)"-->
-<!--            :show-file-list="false">-->
-<!--            <el-button size="small" type="primary">点击上传</el-button>-->
-<!--          </el-upload>-->
-<!--        </template>-->
-<!--      </el-table-column>-->
+      <el-table-column label="预览" align="center" prop="imageUrl">
+        <template v-slot="scope">
+          <el-image
+            v-if="scope.row.imageUrl"
+            :src="getElImageUrl(scope.row)"/>
+<!--            src="process.env.VUE_APP_BASE_API+`/dev-api/boa/rooms/imgUrl/${scope.row.id}/${scope.row.imageUrl}`"/>-->
+          <el-upload
+            v-else
+            class="upload-demo"
+            :http-request="uploadImg"
+            :on-success="handleUploadSuccess.bind(null, scope.row)"
+            :show-file-list="false">
+            <el-button size="small" type="primary">点击上传</el-button>
+          </el-upload>
+        </template>
+      </el-table-column>
       <el-table-column label="地点" align="center" prop="detailedLocation"/>
       <el-table-column label="预定人员" align="center" prop="bookingNickName"/>
       <el-table-column label="状态" align="center" prop="roomStatus">
@@ -309,6 +310,11 @@ export default {
     this.getList();
   },
   methods: {
+    getElImageUrl(row) {
+      let url = `http://localhost:8081/boa/rooms/imgUrl/${row.id}/${row.imageUrl}`
+      console.log('url',url)
+      return url
+    },
     getImageUrl() {
       window.open(this.imgUrl, '_blank')
     },
