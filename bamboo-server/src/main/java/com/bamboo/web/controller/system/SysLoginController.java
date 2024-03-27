@@ -53,8 +53,10 @@ public class SysLoginController
         //         loginBody.getUuid());
         String token = null;
         try {
+            // token = loginService.login(loginBody.getUsername(),
+            //         RsaUtils.decryptByPrivateKey(loginBody.getPassword()), loginBody.getCode(), loginBody.getUuid());
             token = loginService.login(loginBody.getUsername(),
-                    RsaUtils.decryptByPrivateKey(loginBody.getPassword()), loginBody.getCode(), loginBody.getUuid());
+                    RsaUtils.decryptByPrivateKey(loginBody.getPassword()), null, loginBody.getUuid());
         } catch (Exception e) {
             throw new Exception("登录失败，请重新登录！");
         }

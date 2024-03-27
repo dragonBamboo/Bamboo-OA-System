@@ -3,7 +3,7 @@
     <component v-if="showAdminView">
       <el-button type="primary" icon="el-icon-refresh" @click="getList">刷新</el-button>
       <el-table v-loading="loading" :data="approveList" @selection-change="handleSelectionChange">
-        <el-table-column type="selection" width="55" align="center"/>
+<!--        <el-table-column type="selection" width="55" align="center"/>-->
         <el-table-column label="申请人" align="center" prop="submitName"/>
         <el-table-column label="审批状态" align="center" prop="status">
           <template slot-scope="scope">
@@ -15,14 +15,21 @@
             <dict-tag :options="dict.type.boa_examine_type" :value="scope.row.msg.approvalType"/>
           </template>
         </el-table-column>
-        <el-table-column label="详情" align="center" prop="msg.message"/>
+<!--        <el-table-column label="详情" align="center" prop="msg.message"/>-->
+        <el-table-column label="详情" align="center" prop="msg">
+          <template v-slot="scope">
+            <el-tooltip class="item" effect="dark" :content="scope.row.msg.message" placement="bottom">
+              <div>{{ shortDetail(scope.row.msg.message) }}</div>
+            </el-tooltip>
+          </template>
+        </el-table-column>
         <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
           <template slot-scope="scope">
             <el-button
               size="medium"
               type="success"
               @click="handleUpdate(scope.row)"
-            >同意
+            >通过
             </el-button>
             <el-button
               size="medium"
@@ -115,6 +122,12 @@ export default {
     this.show()
   },
   methods: {
+    shortDetail(msg){
+      if (msg.length < 10) {
+        return msg
+      }
+      return msg.substring(0,10)+'...'
+    },
     show() {
       let roles = this.userRoles
       if (roles.length === 0) {

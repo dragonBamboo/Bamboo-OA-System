@@ -120,7 +120,8 @@ public class SysLoginService
             if (captcha == null)
             {
                 AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_FAIL, MessageUtils.message("user.jcaptcha.expire")));
-                throw new CaptchaExpireException();
+                // 抛出验证码异常
+                // throw new CaptchaExpireException();
             }
             // 验证码取消
             /*if (!code.equalsIgnoreCase(captcha))

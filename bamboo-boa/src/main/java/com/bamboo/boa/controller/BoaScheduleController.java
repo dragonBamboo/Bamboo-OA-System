@@ -24,7 +24,7 @@ import com.bamboo.common.utils.poi.ExcelUtil;
 import com.bamboo.common.core.page.TableDataInfo;
 
 /**
- * 日志Controller
+ * 日程Controller
  * 
  * @author bamboo
  * @date 2024-03-05
@@ -37,7 +37,7 @@ public class BoaScheduleController extends BaseController
     private BoaScheduleService boaScheduleService;
 
     /**
-     * 查询日志列表
+     * 查询日程列表
      */
     @PreAuthorize("@ss.hasPermi('boa:schedule:list')")
     @GetMapping("/list")
@@ -49,20 +49,20 @@ public class BoaScheduleController extends BaseController
     }
 
     /**
-     * 导出日志列表
+     * 导出日程列表
      */
     @PreAuthorize("@ss.hasPermi('boa:schedule:export')")
-    @Log(title = "日志", businessType = BusinessType.EXPORT)
+    @Log(title = "日程", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
     public void export(HttpServletResponse response, BoaScheduleDO boaSchedule)
     {
         List<BoaScheduleVO> list = boaScheduleService.selectBoaScheduleList(boaSchedule);
         ExcelUtil<BoaScheduleVO> util = new ExcelUtil<BoaScheduleVO>(BoaScheduleVO.class);
-        util.exportExcel(response, list, "日志数据");
+        util.exportExcel(response, list, "日程数据");
     }
 
     /**
-     * 获取日志详细信息
+     * 获取日程详细信息
      */
     @PreAuthorize("@ss.hasPermi('boa:schedule:query')")
     @GetMapping(value = "/{id}")
@@ -72,10 +72,10 @@ public class BoaScheduleController extends BaseController
     }
 
     /**
-     * 新增日志
+     * 新增日程
      */
     @PreAuthorize("@ss.hasPermi('boa:schedule:add')")
-    @Log(title = "日志", businessType = BusinessType.INSERT)
+    @Log(title = "日程", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody BoaScheduleDO boaSchedule)
     {
@@ -83,10 +83,10 @@ public class BoaScheduleController extends BaseController
     }
 
     /**
-     * 修改日志
+     * 修改日程
      */
     @PreAuthorize("@ss.hasPermi('boa:schedule:edit')")
-    @Log(title = "日志", businessType = BusinessType.UPDATE)
+    @Log(title = "日程", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody BoaScheduleDO boaSchedule)
     {
@@ -94,10 +94,10 @@ public class BoaScheduleController extends BaseController
     }
 
     /**
-     * 删除日志
+     * 删除日程
      */
     @PreAuthorize("@ss.hasPermi('boa:schedule:remove')")
-    @Log(title = "日志", businessType = BusinessType.DELETE)
+    @Log(title = "日程", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{ids}")
     public AjaxResult remove(@PathVariable Long[] ids)
     {

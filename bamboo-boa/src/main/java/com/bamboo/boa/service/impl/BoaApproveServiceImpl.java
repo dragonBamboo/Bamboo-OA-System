@@ -137,7 +137,6 @@ public class BoaApproveServiceImpl extends ServiceImpl<BoaApproveMapper,BoaAppro
         boaExamineDO.setStatus(boaApprove.getStatus());
         examineService.updateBoaExamine(boaExamineDO);
         return boaApproveMapper.updateBoaApprove(boaApprove);
-        // return boaApproveMapper.deleteBoaApproveById(id);
     }
 
     @Override

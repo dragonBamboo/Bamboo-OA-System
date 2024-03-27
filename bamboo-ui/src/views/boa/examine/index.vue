@@ -2,12 +2,23 @@
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" size="small" :inline="true" v-show="showSearch" label-width="68px">
       <el-form-item label="审批类型" prop="submitterId">
-        <el-input
+<!--        <el-input-->
+<!--          v-model="queryParams.approvalType"-->
+<!--          placeholder="请选择审批类型"-->
+<!--          clearable-->
+<!--          @keyup.enter.native="handleQuery"-->
+<!--        />-->
+        <el-select
           v-model="queryParams.approvalType"
           placeholder="请选择审批类型"
-          clearable
-          @keyup.enter.native="handleQuery"
-        />
+        >
+          <el-option
+            v-for="item in typeOptions"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" icon="el-icon-search" size="mini" @click="handleQuery">搜索</el-button>
@@ -178,9 +189,15 @@ export default {
       form: {},
       // 表单校验
       rules: {},
+      typeOptions:[
+        {label: '请假',value:'1'},
+        {label: '报销',value:'2'},
+        {label: '采购',value:'3'},
+      ],
     };
   },
   mounted() {
+
   },
   created() {
     this.getList();
@@ -194,7 +211,7 @@ export default {
           item.approvalType = "" + item.approvalType
           return item
         });
-        console.log('examineList',this.examineList)
+        // console.log('examineList',this.examineList)
         this.total = response.total;
         this.loading = false;
       });
@@ -226,6 +243,7 @@ export default {
     /** 重置按钮操作 */
     resetQuery() {
       this.resetForm("queryForm");
+      this.queryParams.approvalType = null
       this.handleQuery();
     },
     // 多选框选中数据

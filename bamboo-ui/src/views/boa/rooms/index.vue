@@ -143,7 +143,7 @@
             icon="el-icon-edit"
             @click="handleUpdate(scope.row)"
             v-hasPermi="['boa:rooms:edit']"
-          >修改
+          >预定
           </el-button>
           <el-button
             size="mini"
@@ -454,7 +454,7 @@ export default {
       getRooms(id).then(response => {
         this.form = response.data;
         this.open = true;
-        this.title = "修改会议室信息";
+        this.title = "预定会议室";
       });
     },
     /** 提交按钮 */
